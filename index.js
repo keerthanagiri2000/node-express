@@ -6,7 +6,7 @@ dotenv.config();
 
 console.log(process.env.MONGO_URL);
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 const movies = [
   {
