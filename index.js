@@ -2,6 +2,8 @@
 import dotenv from "dotenv";
 import express from "express"; //"type="module",
 import { MongoClient } from "mongodb";
+import cors from "cors";
+
 dotenv.config();
 
 console.log(process.env.MONGO_URL);
@@ -78,6 +80,8 @@ const movies = [
     trailer: "https://www.youtube.com/embed/NgsQ8mVkN8w",
   },
 ];
+
+app.use(cors());
 //connect node and mongo
 //middle ware -> intercept -> converting body to json
 app.use(express.json());
